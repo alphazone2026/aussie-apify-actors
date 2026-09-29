@@ -8,17 +8,35 @@
       "type": "array",
       "description": "The numbers to check. Spaces, dashes and dots are ignored. An 11 digit number is treated as an ABN and a 9 digit number as an ACN unless you choose a number type below. Up to 10,000 numbers per run.",
       "editor": "stringList",
-      "prefill": ["51 824 753 556", "004 085 616", "12 345 678 901"]
+      "prefill": [
+        "51 824 753 556",
+        "004 085 616",
+        "12 345 678 901"
+      ],
+      "default": [
+        "51 824 753 556",
+        "004 085 616"
+      ]
     },
     "numberType": {
       "title": "Number type",
       "type": "string",
       "description": "Auto detects by length. Choose ABN or ACN to force one type and get a clear error for numbers of the wrong length.",
       "editor": "select",
-      "enum": ["auto", "abn", "acn"],
-      "enumTitles": ["Auto detect by length", "ABN (11 digits)", "ACN (9 digits)"],
+      "enum": [
+        "auto",
+        "abn",
+        "acn"
+      ],
+      "enumTitles": [
+        "Auto detect by length",
+        "ABN (11 digits)",
+        "ACN (9 digits)"
+      ],
       "default": "auto"
     }
   },
-  "required": ["numbers"]
+  "required": [
+    "numbers"
+  ]
 }
