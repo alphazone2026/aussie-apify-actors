@@ -1,0 +1,12 @@
+{
+  "actorSpecification": 1,
+  "name": "au-abn-acn-validator",
+  "title": "Australian ABN and ACN Validator (bulk)",
+  "version": "1.0",
+  "description": "Bulk-check Australian Business Numbers (ABN) and Australian Company Numbers (ACN): check digit, clean formatting and reason codes. Offline, fast, no login.",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "minMemoryMbytes": 128
+}

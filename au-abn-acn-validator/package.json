@@ -1,0 +1,10 @@
+{
+  "name": "au-abn-acn-validator",
+  "version": "1.0.0",
+  "description": "Bulk-check Australian ABN and ACN check digits. No external calls.",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": { "start": "node src/main.js", "test": "node --test test/validate.test.js" },
+  "dependencies": { "apify": "^3.7.2" },
+  "license": "ISC"
+}

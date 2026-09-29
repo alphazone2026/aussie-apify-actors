@@ -1,0 +1,123 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "date": {
+        "type": "string",
+        "title": "Date",
+        "description": "Date of the rate or decision, YYYY-MM-DD.",
+        "example": "2026-09-28"
+      },
+      "base": {
+        "type": "string",
+        "title": "Base",
+        "description": "Base currency (always AUD).",
+        "example": "AUD"
+      },
+      "quote": {
+        "type": "string",
+        "title": "Quote",
+        "description": "Quote currency code, or TWI for the trade-weighted index.",
+        "example": "USD"
+      },
+      "rate": {
+        "type": "number",
+        "title": "Rate",
+        "description": "Units of the quote currency per A$1 (or the TWI index value).",
+        "example": 0.7023
+      },
+      "seriesId": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "RBA series ID",
+        "description": "The RBA's series identifier.",
+        "example": "FXRUSD"
+      },
+      "dataSource": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Data source",
+        "description": "Data provider the RBA lists for this series.",
+        "example": "WM/Reuters"
+      },
+      "unit": {
+        "type": "string",
+        "title": "Unit",
+        "description": "What the rate is measured in.",
+        "example": "USD per A$1"
+      },
+      "changePercentagePoints": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Change (percentage points)",
+        "description": "Cash rate decisions only: the change as published.",
+        "example": "+0.25"
+      },
+      "newCashRateTargetPercent": {
+        "type": [
+          "number",
+          "null"
+        ],
+        "title": "New cash rate target (%)",
+        "description": "Cash rate decisions only. Null for historical range values.",
+        "example": 4.35
+      },
+      "newCashRateTargetText": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "New cash rate target (as published)",
+        "description": "Cash rate decisions only: the text as published, including historical ranges.",
+        "example": "4.35"
+      },
+      "attribution": {
+        "type": "string",
+        "title": "Attribution",
+        "description": "Source line to keep when you republish.",
+        "example": "Source: Reserve Bank of Australia 2026"
+      }
+    }
+  },
+  "views": {
+    "exchange": {
+      "title": "Exchange rates",
+      "transformation": {
+        "fields": [
+          "date",
+          "base",
+          "quote",
+          "rate",
+          "unit",
+          "dataSource",
+          "attribution"
+        ]
+      },
+      "display": {
+        "component": "table"
+      }
+    },
+    "cash": {
+      "title": "Cash rate decisions",
+      "transformation": {
+        "fields": [
+          "date",
+          "changePercentagePoints",
+          "newCashRateTargetPercent",
+          "newCashRateTargetText",
+          "attribution"
+        ]
+      },
+      "display": {
+        "component": "table"
+      }
+    }
+  }
+}

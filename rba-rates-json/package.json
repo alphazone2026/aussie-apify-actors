@@ -1,0 +1,10 @@
+{
+  "name": "rba-rates-json",
+  "version": "1.0.0",
+  "description": "RBA exchange rates and cash rate target changes as clean JSON.",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": { "start": "node src/main.js", "test": "node --test test/rba.test.js" },
+  "dependencies": { "apify": "^3.7.2" },
+  "license": "ISC"
+}

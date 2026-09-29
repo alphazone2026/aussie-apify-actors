@@ -1,0 +1,12 @@
+{
+  "actorSpecification": 1,
+  "name": "rba-rates-json",
+  "title": "RBA Exchange Rates and Cash Rate to JSON",
+  "version": "1.0",
+  "description": "Daily Australian dollar exchange rates and Reserve Bank of Australia cash rate decisions as clean, dated JSON rows. Reads the RBA's own published tables.",
+  "input": "./input_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "minMemoryMbytes": 128
+}

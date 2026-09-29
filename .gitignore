@@ -1,0 +1,7 @@
+node_modules/
+storage/
+apify_storage/
+*.log
+.DS_Store
+_scratch/
+build_apify_sheet.mjs

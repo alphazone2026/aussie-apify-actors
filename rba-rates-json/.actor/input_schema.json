@@ -1,0 +1,49 @@
+{
+  "title": "RBA rates input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "dataset": {
+      "title": "Data",
+      "type": "string",
+      "description": "Daily AUD exchange rates (RBA table F11.1, from 3 January 2023) or the history of cash rate target decisions (RBA table A2).",
+      "editor": "select",
+      "enum": ["exchange-rates", "cash-rate-target"],
+      "enumTitles": ["AUD exchange rates (daily)", "Cash rate target decisions (history)"],
+      "default": "exchange-rates"
+    },
+    "currencies": {
+      "title": "Currencies",
+      "type": "array",
+      "description": "Three-letter codes for the exchange-rate data, for example USD, EUR, GBP, JPY, NZD, CNY. Add TWI for the trade-weighted index. Leave empty for all currencies the RBA publishes.",
+      "editor": "stringList",
+      "prefill": ["USD", "EUR", "GBP"]
+    },
+    "latestOnly": {
+      "title": "Latest day only",
+      "type": "boolean",
+      "description": "Return only the most recent published day (exchange rates) or the most recent decision (cash rate). Turn off to use the date range below.",
+      "default": true
+    },
+    "dateFrom": {
+      "title": "From date",
+      "type": "string",
+      "description": "First date to include, as YYYY-MM-DD. Used when Latest day only is off. Blank means 30 days before the newest data.",
+      "editor": "textfield"
+    },
+    "dateTo": {
+      "title": "To date",
+      "type": "string",
+      "description": "Last date to include, as YYYY-MM-DD. Blank means the newest data.",
+      "editor": "textfield"
+    },
+    "maxItems": {
+      "title": "Maximum rows",
+      "type": "integer",
+      "description": "Safety limit on the number of rows returned in one run.",
+      "default": 1000,
+      "minimum": 1,
+      "maximum": 20000
+    }
+  }
+}

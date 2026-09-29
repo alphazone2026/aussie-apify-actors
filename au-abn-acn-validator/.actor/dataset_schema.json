@@ -1,0 +1,79 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "input": {
+        "type": "string",
+        "title": "Input",
+        "description": "The number exactly as you supplied it.",
+        "example": "51 824 753 556"
+      },
+      "type": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Type",
+        "description": "ABN or ACN, or null if the length was wrong.",
+        "example": "ABN"
+      },
+      "valid": {
+        "type": "boolean",
+        "title": "Check digit OK",
+        "description": "True when the check digit matches. Does not prove the business is registered.",
+        "example": true
+      },
+      "formatted": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Formatted",
+        "description": "The number in the standard grouped format.",
+        "example": "51 824 753 556"
+      },
+      "reason": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "Reason if not OK",
+        "description": "Why the number failed, or null.",
+        "example": null
+      },
+      "possibleAcn": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "title": "ACN inside the ABN",
+        "description": "For a valid ABN whose last 9 digits are a valid ACN. A hint only.",
+        "example": "000 014 675"
+      }
+    }
+  },
+  "views": {
+    "results": {
+      "title": "Validation results",
+      "transformation": {
+        "fields": [
+          "input",
+          "type",
+          "valid",
+          "formatted",
+          "reason",
+          "possibleAcn"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "valid": {
+            "format": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
