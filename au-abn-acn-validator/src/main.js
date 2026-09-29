@@ -18,8 +18,8 @@ try {
       return row;
     });
     const ok = results.filter((r) => r.valid).length;
-    // One 'result' event per checked number (price is set in the Apify Console under Monetization).
-    await Actor.pushData(results, 'result');
+    // Apify charges its built-in per-result event for each item saved here (price set in Console > Monetization).
+    await Actor.pushData(results);
     await Actor.setValue('SUMMARY', { checked: results.length, valid: ok, invalid: results.length - ok, note: 'Check digit only. A valid check digit does not prove the number is registered.' });
     await Actor.setStatusMessage(`Checked ${results.length}: ${ok} valid, ${results.length - ok} not valid`);
   }

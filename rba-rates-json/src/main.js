@@ -43,8 +43,8 @@ try {
       await Actor.setStatusMessage('No rows matched your input.');
       log.warning('No rows matched. Check the currency codes and the date range.');
     } else {
-      // One 'result' event per row (price is set in the Apify Console under Monetization).
-      await Actor.pushData(rows, 'result');
+      // Apify charges its built-in per-result event for each row saved here (price set in Console > Monetization).
+      await Actor.pushData(rows);
     }
     await Actor.setValue('SUMMARY', {
       dataset,
