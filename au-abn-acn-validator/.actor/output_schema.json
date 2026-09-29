@@ -1,0 +1,12 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "ABN and ACN validator output",
+  "description": "One row per number checked.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Validation results",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

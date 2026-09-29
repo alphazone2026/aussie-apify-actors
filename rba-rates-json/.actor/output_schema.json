@@ -1,0 +1,12 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "RBA rates output",
+  "description": "One row per exchange rate or cash rate decision.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "Rates",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    }
+  }
+}

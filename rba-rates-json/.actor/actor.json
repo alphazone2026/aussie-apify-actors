@@ -8,5 +8,6 @@
   "storages": {
     "dataset": "./dataset_schema.json"
   },
-  "minMemoryMbytes": 128
+  "minMemoryMbytes": 128,
+  "output": "./output_schema.json"
 }
